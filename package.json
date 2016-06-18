@@ -1,0 +1,34 @@
+{
+  "name": "ministarter",
+  "version": "1.0.0",
+  "description": "Simple starter configuration for fast and static web projects",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "clean": "rm -rf dist",
+    "watch": "gulp watch",
+    "commit": "git add dist && git commit -m 'Update for deploying'",
+    "push": "git subtree push --prefix build origin gh-pages",
+    "git": "npm run commit && npm run push",
+    "build": "npm run clean && npm start",
+    "deploy": "npm run build && npm run git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elrumordelaluz/ministarter.git"
+  },
+  "keywords": [
+    "starter",
+    "pug",
+    "js",
+    "postcss",
+    "es2015",
+    "babel"
+  ],
+  "author": "Lionel T <elrumordelaluz@hotmail.com> (elrumordelaluz.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elrumordelaluz/ministarter/issues"
+  },
+  "homepage": "https://github.com/elrumordelaluz/ministarter#readme"
+}

@@ -1,0 +1,15 @@
+:root {
+  --font-color: #00aaeeff;
+  --bg-color: #d0d0d0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  font-family: Helvetica Neue, Helvetica, Arial, 'sans';
+}
+
+h1 {
+  font-weight: 100;
+  text-align: center;
+}
