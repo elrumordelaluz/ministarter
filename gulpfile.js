@@ -6,6 +6,7 @@ const pug = require('gulp-pug')
 const babel = require('gulp-babel')
 const browserSync = require('browser-sync')
 const sourcemaps = require('gulp-sourcemaps')
+const imagemin = require('gulp-imagemin');
 const reload = browserSync.reload
 const viewsConfig = require('./src/views/config')
 
@@ -43,10 +44,19 @@ gulp.task('js', () => {
     .pipe(reload({ stream: true }))
 })
 
+gulp.task('imgs', () => {
+  return gulp.src('./src/images/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('./dist/imgs'))
+    .pipe(reload({ stream: true }))
+})
+
 gulp.task('watch', () => {
   gulp.watch(['./src/views/**/*.pug', './src/views/config.js'], ['pug'])
   gulp.watch(['./src/styles/*.css'], ['css'])
   gulp.watch(['./src/scripts/*.js'], ['js'])
+  gulp.watch(['./src/images/*'], ['imgs'])
+
   browserSync({
     server: {
       baseDir: './dist'
@@ -54,4 +64,4 @@ gulp.task('watch', () => {
   })
 })
 
-gulp.task('default', ['css', 'pug', 'js'])
+gulp.task('default', ['css', 'pug', 'js', 'imgs'])
