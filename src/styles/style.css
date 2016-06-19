@@ -11,10 +11,14 @@ body {
 body {
   align-items: center;
   background-color: var(--bg-color);
+  background-image: url(imgs/bg.jpg);
+  background-size: cover;
   color: var(--font-color);
   display: flex;
   font-family: Helvetica Neue, Helvetica, Arial, 'sans';
   justify-content: center;
+  padding: 0;
+  margin: 0;
 }
 
 h1 {
